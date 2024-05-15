@@ -21,7 +21,7 @@ class Represent
             'NULL' => 'NULL',
             'boolean' => $value ? 'true' : 'false',
             'array' => 'Array',
-            'object' => 'Object(' . get_class($value) . ')',
+            'object' => 'Object(' . get_class($value) . '@' . spl_object_hash($value) .')',
             'string' => "'" . self::cutString((string)$value) . "'",
             default => (string)$value,
         };
